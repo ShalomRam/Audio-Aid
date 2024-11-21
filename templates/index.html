@@ -4,7 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accessible Information Tool</title>
-    <link rel="stylesheet" href="static/styles.css">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 50px;
+    background: #004e92;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, #00c6ff, #0072ff);
+    animation: rotateHeader 6s linear infinite;
+}
+
+@keyframes rotateHeader {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.project-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    font-weight: 300;
+    z-index: 1;
+    position: relative;
+}
+
+.content {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #0072ff;
+    border-radius: 5px;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+textarea:focus {
+    border-color: #004e92;
+}
+
+.process-button {
+    width: 100%;
+    padding: 12px;
+    background: #0072ff;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.process-button:hover {
+    background: #004e92;
+}
+
+.result-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f0f4f8;
+    border-radius: 5px;
+    animation: slideIn 1s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+    </style>
 </head>
 <body>
     <header>
