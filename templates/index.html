@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Information Tool</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="project-title">Audio-Aid</h1>
+        <p class="tagline">Simplify, Summarize, and Vocalize Text for Accessibility</p>
+    </header>
+    
+    <section class="content">
+        <form id="textForm" action="/process" method="post">
+            <label for="input_text">Enter Text to Process:</label>
+            <textarea id="input_text" name="input_text" required></textarea>
+            <button type="submit" class="process-button">Process Text</button>
+        </form>
+        <div id="result" class="result-box hidden">
+            <h2>Summarized Text:</h2>
+            <p id="output_text"></p>
+        </div>
+    </section>
+    
+    <script src="static/script.js"></script>
+</body>
+</html>
